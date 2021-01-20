@@ -5,6 +5,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { HomeComponent } from './home/home.component';
 import { LoginUserComponent } from './login-user/login-user.component';
+import { ProfileComponent } from './profile/profile.component';
 import { RegisterUserComponent} from './register-user/register-user.component'
 import { UpdateBookComponent } from './update-book/update-book.component';
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'changepassword',component:ChangePasswordComponent},
   {path:'addbook', component:AddBookComponent},
   {path:'updatebook', component:UpdateBookComponent},
+  {path:'profile',component:ProfileComponent},
   
   {path: '', redirectTo: 'login', pathMatch: 'full'},
 

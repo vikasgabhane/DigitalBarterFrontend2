@@ -19,10 +19,17 @@ export class BookService {
   createBook(userId:number,book: Book): Observable<Object> {
     return this.httpClient.post(`${this.baseURL}/${userId}`, book);
   }
+
+  
   getBookByBookId(bookId: number): Observable<Book> {
     return this.httpClient.get<Book>(`${this.baseURL}/${bookId}`);
   }
   updateBook(bookId:number,book:Book):Observable<Object>{
     return this.httpClient.put(`${this.baseURL}`,book);
+  }
+
+  private getListByIdURL = "http://localhost:8080/books2"
+  getBookListByUserId(userId:number): Observable<Book[]> {
+    return this.httpClient.get<Book[]>(`${this.getListByIdURL}/${userId}`);
   }
 }

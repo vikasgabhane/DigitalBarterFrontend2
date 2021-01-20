@@ -13,6 +13,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 
 import { UpdateBookComponent } from './update-book/update-book.component';
 import { AddBookComponent } from './add-book/add-book.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AddBookComponent } from './add-book/add-book.component';
     ForgetPasswordComponent,
     ChangePasswordComponent,
     UpdateBookComponent,
-    AddBookComponent
+    AddBookComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
