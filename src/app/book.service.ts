@@ -32,4 +32,9 @@ export class BookService {
   getBookListByUserId(userId:number): Observable<Book[]> {
     return this.httpClient.get<Book[]>(`${this.getListByIdURL}/${userId}`);
   }
+
+  //Book Delete by Id
+  deleteBook(bookId: number): Observable<Object>{
+    return this.httpClient.delete(`${this.baseURL}/${bookId}`);
+  }
 }
