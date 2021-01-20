@@ -24,9 +24,7 @@ export class BookService {
   getBookByBookId(bookId: number): Observable<Book> {
     return this.httpClient.get<Book>(`${this.baseURL}/${bookId}`);
   }
-  updateBook(bookId:number,book:Book):Observable<Object>{
-    return this.httpClient.put(`${this.baseURL}`,book);
-  }
+  
 
   private getListByIdURL = "http://localhost:8080/books2"
   getBookListByUserId(userId:number): Observable<Book[]> {
@@ -36,5 +34,11 @@ export class BookService {
   //Book Delete by Id
   deleteBook(bookId: number): Observable<Object>{
     return this.httpClient.delete(`${this.baseURL}/${bookId}`);
+  }
+
+  //Book Update by Id
+  private updateBookByIdURL = "http://localhost:8080/books3"
+  updateBook(bookId:number,book:Book):Observable<Object>{
+    return this.httpClient.put(`${this.updateBookByIdURL}/${bookId}`,book);
   }
 }

@@ -39,8 +39,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  updateBook(bookId: number|undefined) {
-    this.router.navigate(['/updatebook',bookId]);
+  exchangeBook(bookId: number|undefined) {
+    
   }
 
   logoutFunction(){

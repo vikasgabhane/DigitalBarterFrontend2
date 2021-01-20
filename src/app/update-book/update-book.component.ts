@@ -19,29 +19,36 @@ export class UpdateBookComponent implements OnInit {
 
   ngOnInit(): void {
 
+    //this.bookId = this.route.snapshot.paramMap.get('bookId');
     this.bookId = this.route.snapshot.params['bookId'];
 
     this.bookService.getBookByBookId(this.bookId).subscribe(data => {
       this.book = data;
-      this.updateBook();
+      
     }, error => console.log(error));
+    
+   //this.updateBook(this.bookId);
+   
   }
 
   onSubmit(){
-    this.updateBook();
-  }
 
-  updateBook(){
-
-    this.bookService.updateBook(this.bookId,this.book).subscribe(data =>{
-      this.goToBookList();
+    console.log(this.bookId);
+    /*this.bookService.updateBook(this.bookId,this.book).subscribe(data =>{
+      console.log(data);
+      this.goToProfile();
     },
     error => console.log(error));
-
+    */
+    this.bookService.updateBook(this.bookId,this.book).subscribe(data=>{
+      this.goToProfile();
+     },error=>console.log(error));
+    
   }
 
-  goToBookList() {
-    this.router.navigate(['/home']);
+
+  goToProfile() {
+    this.router.navigate(['/profile']);
   }
 
 }

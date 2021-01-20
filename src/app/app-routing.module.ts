@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'register',component: RegisterUserComponent},
   {path:'changepassword',component:ChangePasswordComponent},
   {path:'addbook', component:AddBookComponent},
-  {path:'updatebook', component:UpdateBookComponent},
+  {path:'updatebook/:bookId', component:UpdateBookComponent},
   {path:'profile',component:ProfileComponent},
   
   {path: '', redirectTo: 'login', pathMatch: 'full'},

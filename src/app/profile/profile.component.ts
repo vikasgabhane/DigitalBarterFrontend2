@@ -36,8 +36,10 @@ export class ProfileComponent implements OnInit {
 
     });
   }
-  updateBook(bookId: number|undefined) {
-    this.router.navigate(['/updatebook',bookId]);
+ updateBook(bookId: number|any) {
+    //this.router.navigate(['/updatebook',bookId]);
+    console.log(bookId);
+   this.router.navigate(['updatebook',bookId]);
   }
   deleteBook(bookId: number|any) {
     this.bookService.deleteBook(bookId).subscribe( data => {
