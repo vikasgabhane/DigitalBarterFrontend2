@@ -12,7 +12,10 @@ import { User } from '../user';
 })
 export class HomeComponent implements OnInit {
   books: Book[] | undefined;
+  mybooks: Book[] | undefined;
   user:User = new User();
+  bookId1:number|any;
+  book1:Book=new Book();
   constructor(private bookService: BookService,
     private router: Router) { }
 
@@ -22,6 +25,7 @@ export class HomeComponent implements OnInit {
      //let uId = parseInt(uid);
      console.log(this.user.emailId);
     this.getBooks(this.user.userId);
+    this.getBooksBySessionId(this.user.userId);
 
  
   }
@@ -37,11 +41,28 @@ export class HomeComponent implements OnInit {
       }
 
     });
+
+
   }
 
-  exchangeBook(bookId: number|undefined) {
+  private getBooksBySessionId(userId:number|any) {
+    
+    this.bookService.getBookListByUserId(userId).subscribe(data => {
+      this.mybooks = data;
+
+      for(let i=0;i<4;i++){
+        const ele=data[i];
+        console.log(ele);
+      }
+
+    });
+  }
+
+  exchangeBook() {
     
   }
+
+ 
 
   logoutFunction(){
 

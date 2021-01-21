@@ -14,20 +14,26 @@
             <th>Genre</th>
             <th>Publisher</th>
             <th>Cost</th>
+            <th>Offer</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor= "let book of books">
-            <td>{{book.userId}}</td>
-            <td>{{book.isbn}}</td>
-            <td>{{book.title}}</td>
-            <td>{{book.author}}</td>
-            <td>{{book.genre}}</td>
-            <td>{{book.publisher}}</td>
-            <td>{{book.cost}}</td>
+        <tr *ngFor= "let b of books">
+            <td>{{b.userId}}</td>
+            <td>{{b.isbn}}</td>
+            <td>{{b.title}}</td>
+            <td>{{b.author}}</td>
+            <td>{{b.genre}}</td>
+            <td>{{b.publisher}}</td>
+            <td>{{b.cost}}</td>
+            <select  name="mybooklist"  class="form-control"  >
+                <option >Select Book:</option>
+                <option  *ngFor= "let mybook of mybooks">{{mybook.title}}</option>
+            </select>
+            <!--value={{mybook.bookId}}-->
             <td>
-                <button (click)="exchangeBook(book.bookId)" class="btn btn-info">Exchange</button>
+                <button (click)="exchangeBook()" class="btn btn-info">Exchange</button>
             </td>
         </tr>
     </tbody>
