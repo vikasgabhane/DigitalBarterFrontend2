@@ -14,6 +14,9 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { UpdateBookComponent } from './update-book/update-book.component';
 import { AddBookComponent } from './add-book/add-book.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ExchangeRequestsComponent } from './exchange-requests/exchange-requests.component';
+import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
+import { MyRequestComponent } from './my-request/my-request.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { ProfileComponent } from './profile/profile.component';
     ChangePasswordComponent,
     UpdateBookComponent,
     AddBookComponent,
-    ProfileComponent
+    ProfileComponent,
+    ExchangeRequestsComponent,
+    ConfirmOrderComponent,
+    MyRequestComponent
   ],
   imports: [
     BrowserModule,

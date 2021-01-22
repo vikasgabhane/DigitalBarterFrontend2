@@ -15,7 +15,7 @@ export class RegisterUserComponent implements OnInit {
   mobileNoPattern = "^[0][1-9]\d{9}$|^[1-9]\d{9}$";
   emailIdPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
   //emailIdPattern ="^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$";
-  public fbFormGroup = this.fb.group({
+ /* public fbFormGroup = this.fb.group({
     userName: ['', Validators.required],
     password: ['', [Validators.required, Validators.minLength(4)]],
     emailId: ['', [Validators.required, Validators.pattern(this.emailIdPattern)]],
@@ -24,6 +24,7 @@ export class RegisterUserComponent implements OnInit {
     city: ['', Validators.required],
     pincode: ['', Validators.required],
   });
+  */
   constructor(private userService: UserService, private router:Router,private fb: FormBuilder) { }
 
   ngOnInit(): void {

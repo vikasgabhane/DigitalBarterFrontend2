@@ -1,7 +1,28 @@
 
-<button class="btn btn-info" (click)="logoutFunction()">Logout</button>
-<a class="btn btn-success" (click)="addBookBtnClick()" >Add Book</a>
-<a class="btn btn-success" (click)="profileBtnClick()" >Profile</a>
+<div class="container-field">
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="d-flex justify-content-between">
+            <div>
+                <a class="navbar-brand" href="#">
+                    <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                    Bootstrap
+                  </a>
+            </div>
+            <div >
+                <button class="btn btn-info" (click)="logoutFunction()">Logout</button>
+                <a class="btn btn-success" (click)="addBookBtnClick()" >Add Book</a>
+                <a class="btn btn-success" (click)="profileBtnClick()" >Profile</a>
+                <a class="btn btn-success" (click)="excReqBtnClick()" >Exchange Requests</a>
+                <a class="btn btn-success" (click)="myReqBtnClick()" >My Requests</a>
+
+            </div>
+        </div>
+       
+      </nav>
+
+
+
 <h1>Book List</h1>
 
 <table class="table table-striped">
@@ -20,24 +41,32 @@
     </thead>
     <tbody>
         <tr *ngFor= "let b of books">
-            <td>{{b.userId}}</td>
+            <td >{{b.userId}}</td>
             <td>{{b.isbn}}</td>
             <td>{{b.title}}</td>
             <td>{{b.author}}</td>
             <td>{{b.genre}}</td>
             <td>{{b.publisher}}</td>
             <td>{{b.cost}}</td>
-            <select  name="mybooklist"  class="form-control"  >
+           <!--<select ng-model="selectedBook"   class="form-control" (click)="clickHere(selectedBook1)" selected-option="selectedBook1" >
                 <option >Select Book:</option>
-                <option  *ngFor= "let mybook of mybooks">{{mybook.title}}</option>
+                <option  *ngFor= "let mybook of mybooks" [ngValue]="mybook">{{mybook.title}}</option>
             </select>
+            --> 
             <!--value={{mybook.bookId}}-->
+            <select [(ngModel)]="selectedBook1"   class="form-control" (click)="clickHere()"  >
+               <option >Select Book:</option> 
+                <option  *ngFor= "let mybook of mybooks" [ngValue]="mybook">{{mybook.title}}</option>
+            </select>
+           
             <td>
-                <button (click)="exchangeBook()" class="btn btn-info">Exchange</button>
+                <button (click)="exchangeBook(b.bookId)" class="btn btn-info">Exchange</button>
             </td>
         </tr>
     </tbody>
 
 </table>
+
+</div>
 
 

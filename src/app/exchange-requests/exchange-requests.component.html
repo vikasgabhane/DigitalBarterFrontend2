@@ -1,0 +1,29 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>Book Name</th>
+            <th>Author Name</th>
+            <th>Genre</th>
+            <th>Publisher</th>
+            <th>Cost</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let exreq of exchangeRequests">
+            <td >{{exreq.requesterUserId}}</td>
+            <td>{{exreq.requesterBookTitle}}</td>
+            <td>{{exreq.requesterBookAuthor}}</td>
+            <td>{{exreq.requesterBookGenre}}</td>
+            <td>{{exreq.requesterBookPublisher}}</td>
+            <td>{{exreq.requesterBookCost}}</td>         
+            <td>
+                <button (click)="orderBook(exreq.exchangeId)" class="btn btn-outline-success mr-2">Accept</button>
+                <button (click)="denyBook(exreq.exchangeId)" class="btn btn-outline-danger">deny</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+

@@ -1,0 +1,28 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>Book Name</th>
+            <th>Author Name</th>
+            <th>Genre</th>
+            <th>Publisher</th>
+            <th>Cost</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let exreq of exchangeRequests">
+            <td >{{exreq.granterUserId}}</td>
+            <td>{{exreq.granterBookTitle}}</td>
+            <td>{{exreq.granterBookAuthor}}</td>
+            <td>{{exreq.granterBookGenre}}</td>
+            <td>{{exreq.granterBookPublisher}}</td>
+            <td>{{exreq.granterBookCost}}</td>         
+            <td>
+                <button (click)="cancelRequest(exreq.exchangeId)" class="btn btn-outline-danger">Cancel</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+

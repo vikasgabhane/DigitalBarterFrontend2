@@ -19,6 +19,12 @@ export class UpdateBookComponent implements OnInit {
 
   ngOnInit(): void {
 
+    if (!sessionStorage.getItem('userDetails')) {
+
+      this.router.navigate(['/login']);   
+
+    }else{
+
     //this.bookId = this.route.snapshot.paramMap.get('bookId');
     this.bookId = this.route.snapshot.params['bookId'];
 
@@ -28,6 +34,7 @@ export class UpdateBookComponent implements OnInit {
     }, error => console.log(error));
     
    //this.updateBook(this.bookId);
+  }
    
   }
 

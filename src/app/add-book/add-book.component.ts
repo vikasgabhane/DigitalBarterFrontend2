@@ -17,8 +17,16 @@ export class AddBookComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
+    if (!sessionStorage.getItem('userDetails')) {
+
+      this.router.navigate(['/login']);   
+
+    }
+    else{
+
     this.user =JSON.parse(sessionStorage.getItem('userDetails')||'{}') as User;
     console.log(this.user.emailId);
+    }
   }
 
   saveBook(userId:number|any) {

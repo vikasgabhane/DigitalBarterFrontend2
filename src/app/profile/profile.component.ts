@@ -17,11 +17,21 @@ export class ProfileComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    //console.log(JSON.parse(sessionStorage.getItem("userDetails")).emailId);
+
+    if (!sessionStorage.getItem('userDetails')) {
+
+      this.router.navigate(['/login']);   
+
+    }else{
+
+      //console.log(JSON.parse(sessionStorage.getItem("userDetails")).emailId);
     this.user =JSON.parse(sessionStorage.getItem('userDetails')||'{}') as User;
     //let uId = parseInt(uid);
     console.log(this.user.emailId);
    this.getBooks(this.user.userId);
+
+    }
+    
   }
 
   private getBooks(userId:number|any) {
