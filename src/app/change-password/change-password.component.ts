@@ -36,6 +36,7 @@ export class ChangePasswordComponent implements OnInit {
     
 
   }
+ 
 
   onSubmit(userName:String|undefined){
 
@@ -53,6 +54,14 @@ export class ChangePasswordComponent implements OnInit {
     
     
    
+  }
+
+  goToUserLogin(){
+    this.router.navigate(['/login']);
+  }
+
+  goToRegister(){
+    this.router.navigate(['/register']);
   }
 
 

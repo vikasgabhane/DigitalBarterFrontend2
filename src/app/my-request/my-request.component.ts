@@ -55,4 +55,8 @@ export class MyRequestComponent implements OnInit {
 
   }
 
+  goToBookList() {
+    this.router.navigate(['/home']);
+  }
+
 }

@@ -16,16 +16,13 @@ export class LoginUserComponent implements OnInit {
   userDetails:User = new User();
   public uiInvalidCredential = false;
 
-  public fbFormGroup = this.fb.group({
-    emailId: ['', Validators.required],
-    password: ['', [Validators.required,Validators.minLength(4)]],
-  });
+  
   emailId:String | undefined;
   password:String | undefined;
   constructor(
     private userService: UserService, 
     private router:Router,
-    private fb: FormBuilder
+    
     ) { }
 
   ngOnInit(): void {
@@ -66,6 +63,18 @@ export class LoginUserComponent implements OnInit {
      
     this.router.navigate(['/home']);
     
+  }
+
+  goToForgetPass(){
+
+    this.router.navigate(['/forgetpassword']);
+  }
+
+  goToChangePass(){
+    this.router.navigate(['/changepassword']);
+  }
+  goToRegister(){
+    this.router.navigate(['/register']);
   }
 
 

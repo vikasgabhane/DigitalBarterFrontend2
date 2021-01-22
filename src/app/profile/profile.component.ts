@@ -58,4 +58,8 @@ export class ProfileComponent implements OnInit {
     })
   }
 
+  goToBookList() {
+    this.router.navigate(['/home']);
+  }
+
 }

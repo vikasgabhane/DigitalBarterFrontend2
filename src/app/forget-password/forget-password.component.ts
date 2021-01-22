@@ -16,22 +16,24 @@ export class ForgetPasswordComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getPasswordViaGmail(){
-    this.userService.forgetPassword(this.user).subscribe((data:any)=>{
-      console.log(data);
-      this.router.navigate(['/login']);
-      //this.goToUserLogin();
-    },
-      (error: any)=>console.log(error));
-  }
+  
 
   goToUserLogin(){
     this.router.navigate(['/login']);
   }
 
+  goToRegister(){
+    this.router.navigate(['/register']);
+  }
+
   onSubmit(){
     console.log(this.user);
-    this.getPasswordViaGmail();
+    this.userService.forgetPassword(this.user).subscribe((data:any)=>{
+      console.log(data);
+      this.goToUserLogin();
+      //this.goToUserLogin();
+    },
+      (error: any)=>console.log(error));
   }
 
 }

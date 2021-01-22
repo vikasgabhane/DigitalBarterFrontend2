@@ -59,12 +59,12 @@ export class ExchangeRequestsComponent implements OnInit {
         
     });
 
-   /* this.orderService.deleteBookAndRequest(exchangeId).subscribe(data => {
+    this.orderService.deleteBookAndRequest(exchangeId).subscribe(data => {
       console.log(data);
     });
-*/
 
-    this.exchangeRequestService.getRequestByExchangeId(exchangeId).subscribe(data=>{
+
+   /* this.exchangeRequestService.getRequestByExchangeId(exchangeId).subscribe(data=>{
         this.exchangeRequest=data;
         this.granterBookId=this.exchangeRequest.granterBookId;
         this.requesterBookID=this.exchangeRequest.requesterBookId;
@@ -84,7 +84,7 @@ export class ExchangeRequestsComponent implements OnInit {
       this.getExchangeRequests(this.user.userId);
     });
 
-
+*/
     this.goToConfirmationPage();
 
   }
@@ -100,6 +100,10 @@ export class ExchangeRequestsComponent implements OnInit {
   goToConfirmationPage(){
 
     this.router.navigate(['/confirm']);
+  }
+
+  goToBookList() {
+    this.router.navigate(['/home']);
   }
 
 }
